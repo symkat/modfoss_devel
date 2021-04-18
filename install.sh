@@ -1,5 +1,11 @@
 #!/bin/bash
 
+SET_HOSTNAME=$1
+
+if [ ! -z $SET_HOSTNAME ]; then
+    hostnamectl set-hostname $SET_HOSTNAME
+; fi
+
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
@@ -31,7 +37,7 @@ echo "and public ssh key.  Once you save this file, puppet configuration will be
 echo "and puppet will run."
 echo
 read  -p "Press any key to continue."
-$EDITOR common.yaml
+/usr/bin/vim common.yaml
 cp common.yaml /etc/puppetlabs/code/environments/production/data/common.yaml
 mkdir /etc/puppetlabs/code/environments/production/modules/role
 cp -r modfoss_devel /etc/puppetlabs/code/environments/production/modules/role/
