@@ -4,7 +4,7 @@ SET_HOSTNAME=$1
 
 if [ ! -z $SET_HOSTNAME ]; then
     hostnamectl set-hostname $SET_HOSTNAME
-; fi
+fi
 
 apt-get update
 apt-get install -y apt-transport-https ca-certificates curl gnupg lsb-release
