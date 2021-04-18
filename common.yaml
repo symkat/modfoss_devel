@@ -1,0 +1,22 @@
+# Sudo Configuration
+sudo::configs:
+  'sudo':
+    'content' : '%sudo ALL=(ALL) NOPASSWD: ALL'
+
+## User Shell Accounts
+accounts::group_defaults:
+  system: true
+accounts::group_list:
+  admins: {}
+  users:  {}
+accounts::user_defaults:
+  groups: [ 'users' ]
+  managehome: true
+  system:     false
+accounts::user_list:
+  YOUR_SHELL_ACCOUNT_NAME_HERE: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    groups:
+      - sudo
+      - docker
+    sshkeys:
+      - ADD YOUR SSH KEY PUBLIC KEY HERE !!!!!!!!!!!!!!!!!!!!!!
