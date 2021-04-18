@@ -14,9 +14,10 @@ accounts::user_defaults:
   managehome: true
   system:     false
 accounts::user_list:
-  YOUR_SHELL_ACCOUNT_NAME_HERE: !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!  symkat:
     groups:
       - sudo
       - docker
     sshkeys:
-      - ADD YOUR SSH KEY PUBLIC KEY HERE !!!!!!!!!!!!!!!!!!!!!!
+!      - ssh-rsa AAAAB3Nzas....== symkat@laptop
+!      - ssh-rsa AAAAB3Nsdf....== symkat@desktop

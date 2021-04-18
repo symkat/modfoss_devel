@@ -29,17 +29,18 @@ echo 'modulepath = ./modules/base:./modules/profile:./modules/role:$basemodulepa
 
 # Download Repo
 git clone https://github.com/symkat/modfoss_devel.git
-cd modfoss_devel
-echo
-echo
-echo "Next an editor will open.  Replace the lines with !!! with your shell account name"
-echo "and public ssh key.  Once you save this file, puppet configuration will be installed"
-echo "and puppet will run."
-echo
-read  -p "Press any key to continue."
-/usr/bin/vim common.yaml
-cp common.yaml /etc/puppetlabs/code/environments/production/data/common.yaml
-mkdir /etc/puppetlabs/code/environments/production/modules/role
-cp -r modfoss_devel /etc/puppetlabs/code/environments/production/modules/role/
 
-/opt/puppetlabs/bin/puppet apply -e "include modfoss_devel"
+echo
+echo
+echo The system has been set up for puppet to run, however you must finish
+echo editing the configuration and then run puppet.
+echo
+echo cd modfoss_devel
+echo vim common.yaml
+echo ./puppet-first-run.sh
+echo
+echo After that, re-running puppet can be done with the following command:
+echo
+echo /opt/puppetlabs/bin/puppet apply -e \"include modfoss_devel\"
+echo
+echo
